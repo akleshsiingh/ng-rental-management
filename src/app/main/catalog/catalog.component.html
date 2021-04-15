@@ -1,0 +1,22 @@
+<div class="container">
+
+  <ng-container *ngIf="_categories.length>0;else welcomeMsg">
+    <h4 class="cat-nav">Equipment Category</h4>
+    <ul class="category reset-list ">
+      <li class="item" *ngFor="let category of _categories;let i = index;" (click)="openCategories(i)">
+        <div class="card shadow">
+          <img [src]="'assets/category/'+category.image" alt="">
+          <div class="category-name"> {{category.name}}</div>
+        </div>
+      </li>
+    </ul>
+  </ng-container>
+
+</div>
+
+<ng-template #welcomeMsg>
+  <div class="welcome-msg">
+    <h4>Welcome to Rental Management System</h4>
+    <p>please click on select location in nav bar to proceed further</p>
+  </div>
+</ng-template>

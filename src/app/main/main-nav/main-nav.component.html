@@ -1,0 +1,21 @@
+<nav>
+  <div class="container">
+    <div class="logo pointer" (click)="goToHome()">Rental Management System</div>
+    <div class="options">
+      <div class="slt-location pointer" (click)="_showDropDown=!_showDropDown">Select Location</div>
+      <ul class="dropdown reset-list shadow" (appClickedOutside)="_showDropDown=!_showDropDown" *ngIf="_showDropDown">
+        <li class="dd-item pointer" [class.selected]="_selectedIndex===i"
+          *ngFor="let location of _locations;let i=index;" (click)="showMoreOptions(i)">
+          <a>{{location.name}}</a>
+
+          <ul class="branches reset-list shadow" [class.selected]="_selectedIndex===i">
+            <li class="branch" *ngFor="let branch of location.branches" (click)="selectCategory($event,location.dealers_id,branch)">
+              <a>{{branch.name}}</a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

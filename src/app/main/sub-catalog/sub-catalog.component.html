@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h4 class="cat-nav"> <span class="pointer" (click)="goBackToCategory()">Equipment Category</span> /
+    {{_selectedCategoryName}}</h4>
+
+  <ng-container *ngIf="_subCategories.length>0;else notFound">
+    <ul class="category reset-list ">
+      <li class="item" *ngFor="let category of _subCategories;let i = index;">
+        <div class="card shadow">
+          <img [src]="'assets/category/subcategory/'+category.image" alt="">
+          <div class="category-name"> {{category.name}}</div>
+        </div>
+      </li>
+    </ul>
+  </ng-container>
+
+
+
+</div>
+
+<ng-template #notFound>
+  <h3 class="not-found">Data not found, please select some other category</h3>
+</ng-template>

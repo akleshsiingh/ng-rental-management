@@ -1,0 +1,36 @@
+.cat-nav {
+  margin-top: 50px;
+}
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .card {
+    margin: 5px 10px 0 0;
+    border-radius: 2px;
+    img {
+      height: 250px;
+    }
+    .category-name {
+      text-align: center;
+      height: 46px;
+      line-height: 46px;
+      background: aliceblue;
+    }
+  }
+
+  .shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 40%);
+  }
+}
+
+.welcome-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  p {
+    margin-top: 20px;
+  }
+}
